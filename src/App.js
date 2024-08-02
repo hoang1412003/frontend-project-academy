@@ -1,20 +1,20 @@
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NotFound from './components/notFound/NotFound';
 import Home from './pages/home/Home';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+
+
 function App() {
   return (
     <div className="App">
-      <Router>
+      <HashRouter>
         <Routes>
-          <Route index element={<Home />}></Route>
-          <Route path="/*" element={<NotFound />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
-
 
 export default App;
