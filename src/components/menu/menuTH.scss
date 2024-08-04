@@ -1,7 +1,7 @@
 .contain-th {
     display: flex;
     flex-wrap: wrap;
-    width: 570px;
+    width: 564px;
     height: 295px;
     position: absolute;
     list-style: none;
@@ -50,11 +50,19 @@
             }
 
             img {
-                width: 128px;
                 height: 128px;
             }
         }
+        @media screen and (max-width: 575.98px) {
+            width: 100% / 3;
+        }
     }
 
-    
+    @media screen and (max-width: 575.98px) {
+        left: -50%;
+        position: static;
+        border: none;
+        padding: 0;
+        width: 100%
+    }
 }

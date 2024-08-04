@@ -10,9 +10,10 @@ function Header() {
   const [logoSrc, setLogoSrc] = useState(logoDefault);
   const [activeLink, setActiveLink] = useState('/'); // Đặt đường dẫn mặc định là '/'
   const [showMenuTH, setShowMenuTH] = useState(false);
-  
+  const[showMenu, setShowMenu] =useState(false)
   const handleResize = () => {
     if (window.innerWidth < 576) {
+      setShowMenuTH(true)
       setLogoSrc(logoSmall);
     } else {
       setLogoSrc(logoDefault);
@@ -45,6 +46,7 @@ function Header() {
           </div>
         </Col>
       </Row>
+      
       <Row>
         <Col lg={12} md={12} sm={12} xs={12} >
           <ul className='menu'>
@@ -57,13 +59,14 @@ function Header() {
                 Trang chủ
               </Link>
             </li>
-            <li className='li-th'
-            onMouseEnter={() => setShowMenuTH(true)}
-            onMouseLeave={() => setShowMenuTH(false)}
+            <li className={`li-th link-hd2 ${activeLink === '/trending' ? 'active' : ''}`} onClick={() => handleLinkClick('/trending')}
+            onMouseEnter={() => !(window.innerWidth < 576)?setShowMenuTH(true):''}
+            onMouseLeave={() => !(window.innerWidth < 576)?setShowMenuTH(false):''}
             >
-              <p className={`link-hd2 ${activeLink === '/trending' ? 'active' : ''}`} onClick={() => handleLinkClick('/trending')}>
-                Top thịnh hành
-              </p>
+              Top thịnh hành
+              {/* <p className={`link-hd2 ${activeLink === '/trending' ? 'active' : ''}`} onClick={() => handleLinkClick('/trending')}>
+                
+              </p> */}
               {showMenuTH && <MenuTH />}
             </li>
             <li>

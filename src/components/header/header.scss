@@ -28,6 +28,10 @@
                 
             }
         }
+        @media screen and (max-width: 575.98px) {
+            position: relative;
+            padding: 0;
+        }
     }
     .menu{
         display: flex;
@@ -48,6 +52,12 @@
                 color: #d62e2f;  
                 transform: scale(0.98);
               }
+        }
+        @media screen and (max-width: 575.98px) {
+            flex-direction: column;
+            padding: 0;
+            position: absolute;
+            
         }
     }
     @media screen and (max-width: 575.98px) {
