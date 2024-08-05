@@ -6,25 +6,30 @@ import yeezy from '../../images/imgsTH/25378596-2bb5-4066-94f4-d74ee67c4450_md.w
 import samba from '../../images/imgsTH/1511d8dc-0044-4bdd-9a63-5da341b91858_md.webp'
 import asicsCourt from '../../images/imgsTH/e6968395-039e-48f2-92b0-6291394b3928_md.webp'
 import './menuTH.scss'
+
 export default function MenuTH() {
+    const handleItemClick = (e) => {
+        e.stopPropagation(); // Ngăn chặn sự kiện click lan tỏa lên phần tử cha
+    };
+
     return (
         <ul className='contain-th'>
-            <li>
+            <li onClick={handleItemClick}>
                 <div><img src={jordan1} /> <span>Jordan 1</span></div>
             </li>
-            <li>
+            <li onClick={handleItemClick}>
                 <div><img src={ariforce1} /> <span>Ariforce 1</span></div>
             </li>
-            <li>
+            <li onClick={handleItemClick}>
                 <div><img src={dunk} /> <span>Dunk</span></div>
             </li>
-            <li>
+            <li onClick={handleItemClick}>
                 <div><img src={yeezy} /> <span>Yeezy</span></div>
             </li>
-            <li>
+            <li onClick={handleItemClick}>
                 <div><img src={samba} /> <span>Samba</span></div>
             </li>
-            <li>
+            <li onClick={handleItemClick}>
                 <div><img src={asicsCourt} /> <span>Asics Court</span></div>
             </li>
         </ul>

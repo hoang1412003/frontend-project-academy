@@ -6,18 +6,24 @@ import { Col, Container, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import MenuTH from '../menu/MenuTH';
 
+
 function Header() {
   const [logoSrc, setLogoSrc] = useState(logoDefault);
   const [activeLink, setActiveLink] = useState('/'); // Đặt đường dẫn mặc định là '/'
   const [showMenuTH, setShowMenuTH] = useState(false);
-  const[showMenu, setShowMenu] =useState(false)
+  const [showMenu, setShowMenu] = useState(false)
   const handleResize = () => {
     if (window.innerWidth < 576) {
-      setShowMenuTH(true)
+      
       setLogoSrc(logoSmall);
     } else {
       setLogoSrc(logoDefault);
+      setShowMenu(true)
     }
+  };
+
+  const handleMenuButtonClick = () => {
+    setShowMenu(!showMenu);
   };
 
   useEffect(() => {
@@ -31,7 +37,7 @@ function Header() {
   };
 
   return (
-    <Container className='contain-header'>
+    <div className='contain-header'>
       <Row>
         <Col lg={12} md={12} sm={12} xs={12} className='col-hd1'>
           <Link to={`/`} className='logo-img'>
@@ -41,65 +47,77 @@ function Header() {
             <button className='icon-ct'><i className="fa-solid fa-magnifying-glass"></i></button>
             <button className='icon-ct'><i className="fa-solid fa-cart-shopping"></i></button>
             {
-              window.innerWidth < 576 && <button className='icon-ct'><i className="fa-solid fa-bars"></i></button>
+              window.innerWidth < 576 && <button onClick={handleMenuButtonClick} className='icon-ct'><i className="fa-solid fa-bars"></i></button>
             }
           </div>
         </Col>
       </Row>
-      
+
       <Row>
         <Col lg={12} md={12} sm={12} xs={12} >
-          <ul className='menu'>
-            <li>
-              <Link
-                className={`link-hd2 ${activeLink === '/' ? 'active' : ''}`}
-                to={'/'}
-                onClick={() => handleLinkClick('/')}
+          {showMenu && (
+            <ul className='menu'>
+              <li>
+                <Link
+                  className={`link-hd2 ${activeLink === '/' ? 'active' : ''}`}
+                  to={'/'}
+                  onClick={() => handleLinkClick('/')}
+                >
+                  Trang chủ
+                </Link>
+              </li>
+              <li className={`li-th link-hd2 ${activeLink === '/trending' ? 'active' : ''}`}
+                onClick={() => {
+                  handleLinkClick('/trending')
+                  if (window.innerWidth < 576) {
+                    setShowMenuTH(!showMenuTH);
+                  }
+                }}
+                onMouseEnter={() => !(window.innerWidth < 576) ? setShowMenuTH(true) : ''}
+                onMouseLeave={() => !(window.innerWidth < 576) ? setShowMenuTH(false) : ''}
+
               >
-                Trang chủ
-              </Link>
-            </li>
-            <li className={`li-th link-hd2 ${activeLink === '/trending' ? 'active' : ''}`} onClick={() => handleLinkClick('/trending')}
-            onMouseEnter={() => !(window.innerWidth < 576)?setShowMenuTH(true):''}
-            onMouseLeave={() => !(window.innerWidth < 576)?setShowMenuTH(false):''}
-            >
-              Top thịnh hành
-              {/* <p className={`link-hd2 ${activeLink === '/trending' ? 'active' : ''}`} onClick={() => handleLinkClick('/trending')}>
-                
-              </p> */}
-              {showMenuTH && <MenuTH />}
-            </li>
-            <li>
-              <Link
-                className={`link-hd2 ${activeLink === '/products' ? 'active' : ''}`}
-                to={'/products'}
-                onClick={() => handleLinkClick('/products')}
-              >
-                Sản phẩm
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={`link-hd2 ${activeLink === '/news' ? 'active' : ''}`}
-                to={'/news'}
-                onClick={() => handleLinkClick('/news')}
-              >
-                Tin tức
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={`link-hd2 ${activeLink === '/about' ? 'active' : ''}`}
-                to={'/about'}
-                onClick={() => handleLinkClick('/about')}
-              >
-                Về Kicksplanet
-              </Link>
-            </li>
-          </ul>
+                Top thịnh hành
+                {/* <p className={`link-hd2 ${activeLink === '/trending' ? 'active' : ''}`} onClick={() => handleLinkClick('/trending')}>
+              
+            </p> */}
+                {showMenuTH && <MenuTH />}
+              </li>
+              <li>
+                <Link
+                  className={`link-hd2 ${activeLink === '/products' ? 'active' : ''}`}
+                  to={'/products'}
+                  onClick={() => handleLinkClick('/products')}
+                >
+                  Sản phẩm
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`link-hd2 ${activeLink === '/news' ? 'active' : ''}`}
+                  to={'/news'}
+                  onClick={() => handleLinkClick('/news')}
+                >
+                  Tin tức
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`link-hd2 ${activeLink === '/about' ? 'active' : ''}`}
+                  to={'/about'}
+                  onClick={() => handleLinkClick('/about')}
+                >
+                  Về Kicksplanet
+                </Link>
+              </li>
+            </ul>
+          )}
+
         </Col>
       </Row>
-    </Container>
+      
+    </div>
+    
   );
 }
 

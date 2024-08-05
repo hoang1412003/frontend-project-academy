@@ -1,0 +1,13 @@
+.link-ct{
+    text-decoration: none;
+    text-align: center;
+    .product{
+        border: none;
+        &:hover {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;        }
+        img{
+            margin: 0 auto;
+        }
+    }
+    
+}

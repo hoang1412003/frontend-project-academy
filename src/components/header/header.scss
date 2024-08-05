@@ -1,69 +1,88 @@
-
-
 .contain-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    background: #fff;
+    padding: 0 10%;
+    border: 1px solid #EEEDEB;
     .col-hd1 {
         display: flex;
         justify-content: space-between;
         padding: 10px 0;
+        
         .logo-img {
             cursor: pointer;
-            img{
+
+            img {
                 // height: 16px;
                 width: 270px;
+
                 @media screen and (max-width: 575.98px) {
                     width: 47px;
                     height: 34px;
                 }
             }
         }
-        .icon-ct{
+
+        .icon-ct {
             border: none;
             background: #fff;
             padding: 10px 20px;
             border-radius: 5px;
+
             &:hover {
                 background-color: #EEEDEB;
             }
-            i {
-                
-            }
+
+            i {}
         }
+
         @media screen and (max-width: 575.98px) {
             position: relative;
             padding: 0;
         }
     }
-    .menu{
+
+    .menu {
         display: flex;
         justify-content: space-evenly;
         list-style-type: none;
-        .li-th{
+
+        .li-th {
             position: relative;
         }
-        .link-hd2{
+
+        .link-hd2 {
             text-decoration: none;
             color: #000;
             cursor: pointer;
             font-size: 17px;
+
             &:hover {
                 color: #d62e2f;
             }
+
             &.active {
-                color: #d62e2f;  
+                color: #d62e2f;
                 transform: scale(0.98);
-              }
+            }
         }
+
         @media screen and (max-width: 575.98px) {
             flex-direction: column;
-            padding: 0;
+            padding: 0 10px;
             position: absolute;
+
+            width: 100%;
             
+            z-index: 3;
+            background: #fff;
+            left: 0;
         }
     }
+
     @media screen and (max-width: 575.98px) {
-        padding: 0 30px;
+        padding: 10px 30px;
     }
 }
-
-
-
