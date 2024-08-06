@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle, Col, Container, Row } from 'reactstrap'
+
+import {Container, Row } from 'reactstrap'
 import './productsHome.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProucts } from '../../redux/productsSlice'
@@ -10,7 +10,7 @@ export default function ProductsHome() {
     const { products, totalPage } = useSelector((state) => state.products)
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(fetchProucts(currentPage))
+        dispatch(fetchProucts({page: currentPage,limit: 8}))
     }, [currentPage])
 
     return (

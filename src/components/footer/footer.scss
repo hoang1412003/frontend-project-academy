@@ -1,0 +1,42 @@
+.footer {
+    background-image: url('../../images/footer/footer-bg.webp');
+    /* Đường dẫn tới ảnh nền */
+    background-size: cover;
+    /* Đảm bảo ảnh phủ toàn bộ phần tử */
+    background-position: center;
+    /* Căn giữa ảnh */
+    background-repeat: no-repeat;
+    /* Ngăn lặp lại ảnh */
+    height: auto;
+    width: 100%;
+    /* Chiều cao của footer */
+    padding: 32px 64px;
+
+    .information {
+        padding: 36px 16px;
+        color: #fff;
+
+        .logo {
+            margin-bottom: 16px;
+            img{
+                width: 100%;
+            }
+            
+        }
+
+        .icon {
+            a {
+                font-size: 35px;
+                margin-right: 30px;
+                color: #fff;
+                i{
+                    transition: 1s;
+                    &:hover{
+                        transform: translateY(-10px);
+                    }
+                }
+                
+            }
+        }
+    }
+}
