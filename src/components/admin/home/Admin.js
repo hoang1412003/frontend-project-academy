@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Input, Table } from 'reactstrap';
-import { fetchProucts, addNewProduct, deleteProduct, setSearchQuery } from '../../../redux/productsSlice';
+import { fetchProucts, addNewProduct, deleteProduct, setSearchQuery, updateProduct } from '../../../redux/productsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Product from '../product/Product';
 import AddProduct from '../addProduct/AddProduct';
@@ -32,6 +32,10 @@ export default function Admin() {
         dispatch(setSearchQuery(e.target.value));
     };
 
+    const handle_update = (product)=>{
+        dispatch(updateProduct(product))
+    }
+
     return (
         <Container>
             <h1>Product Management</h1>
@@ -48,6 +52,7 @@ export default function Admin() {
                         <th>Name</th>
                         <th>Category</th>
                         <th>Price</th>
+                        <th>Image</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -57,6 +62,7 @@ export default function Admin() {
                             key={index}
                             product={item}
                             handle_delete={handle_delete}
+                            handle_update={handle_update}
                         />
                     ))}
                 </tbody>

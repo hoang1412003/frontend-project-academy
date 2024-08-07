@@ -5,7 +5,7 @@ import './product.scss'
 export default function Product(props) {
     const { product } = props
     return (
-        <Col lg={3} md={4} sm={6} xs={6} className='mt-4'>
+        
             <Link className='link-ct' to={'/product-detail'}>
                 <Card className='product'>
 
@@ -27,13 +27,13 @@ export default function Product(props) {
                         >
                             DC0774-101 | Giới tính: Nữ
                         </CardSubtitle>
-                        <CardText>
-                            {product.price}
+                        <CardText className='price'>
+                            {product.price} <span>₫</span>
                         </CardText>
                     </CardBody>
                 </Card>
             </Link>
 
-        </Col>
+        
     )
 }

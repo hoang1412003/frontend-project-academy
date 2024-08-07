@@ -1,15 +1,14 @@
 import React from 'react'
 import Header from '../../components/header/Header'
-import Slide from '../../components/slide/Slide'
-import ProductsHome from '../../components/productsHome/ProductsHome'
 import Footer from '../../components/footer/Footer'
+import Products from '../../components/products/Products'
 
-export default function Home() {
+export default function ProductsPage() {
   return (
     <div>
         <Header/>
-        <Slide/>
-        <ProductsHome/>
+
+        <Products/>
         <Footer/>
     </div>
   )
