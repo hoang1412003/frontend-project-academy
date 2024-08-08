@@ -1,0 +1,85 @@
+.container-detail {
+    margin-top: 140px;
+    width: 100%;
+
+    .urls {
+        a {
+            span {
+                margin: 0 10px;
+            }
+
+            text-decoration: none;
+            color: #000;
+        }
+    }
+
+    .product-detail {
+        align-items: center;
+
+        .product-info {
+            .product-title {
+                p{
+                    color: #B2B2B2;
+                }
+                .price{
+                    color: #d62e2f;
+                }
+            }
+            .product-size {
+                border: 1px solid #EEEDEB;
+                padding: 10px;
+
+                .size-option {
+                    text-align: center;
+                    border: 1px solid #666666;
+                    border-radius: 5px;
+                    padding: 6% 0;
+                    cursor: pointer;
+                    transition: border 0.3s;
+                    font-size: 12px;
+
+                    &:hover {
+                        border-color: #333;
+                    }
+
+                    &.active {
+                        border: 1px solid #d62e2f;
+                        color: #d62e2f;
+                    }
+                }
+            }
+
+            .product-actions {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 4rem;
+                .add-cart{
+                    &:hover{
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+                .buy {
+                    color: #D62E2F;
+                    border-color: #D62E2F;
+                    box-shadow: 4px 4px 0px 0px #D62E2F;
+                }
+                button {
+                    background-color: #fff;
+                    color: #000;
+                    width: 47%;
+                }
+
+                @media screen and (max-width: 575.98px) {
+                    margin-top: 2rem;
+                }
+            }
+        }
+
+        .product-image {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

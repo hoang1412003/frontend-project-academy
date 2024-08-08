@@ -9,7 +9,7 @@ import MenuTH from '../menu/MenuTH';
 
 function Header() {
   const [logoSrc, setLogoSrc] = useState(logoDefault);
-  const [activeLink, setActiveLink] = useState('/'); // Đặt đường dẫn mặc định là '/'
+  const [activeLink, setActiveLink] = useState('/'); 
   const [showMenuTH, setShowMenuTH] = useState(false);
   const [showMenu, setShowMenu] = useState(false)
   const handleResize = () => {

@@ -10,7 +10,8 @@ const initialState = {
     totalPage: 30,
     searchQuery: '',
     sortBy: 'default', 
-    order: 'asc'       
+    order: 'asc',
+    selectedProduct: null       
 };
 
 const url = "https://66a8534f53c13f22a3d25bb3.mockapi.io/product";
@@ -33,6 +34,12 @@ export const fetchProucts = createAsyncThunk('products/fetchProucts', async ({ p
     const res = await axios.get(`${url}?page=${page}${limit ? `&limit=${limit}` : ''}&${queryString}`);
     return res.data;
 });
+
+export const fetchProductById = createAsyncThunk('products/fetchProductById', async (id) => {
+    const res = await axios.get(`${url}/${id}`);
+    return res.data;
+});
+
 export const deleteProduct = createAsyncThunk('products/deleteProduct', async (id) => {
     await axios.delete(url + '/' + id);
     return id;
@@ -154,6 +161,17 @@ const productsSlice = createSlice({
                         items.slice(0, 4) // Giới hạn mỗi nhóm chỉ có 4 sản phẩm
                     ])
                 );
+            })
+            .addCase(fetchProductById.pending, (state) => {
+                state.status = "loading";
+            })
+            .addCase(fetchProductById.fulfilled, (state, action) => {
+                state.status = "succeeded";
+                state.selectedProduct = action.payload; // Lưu thông tin sản phẩm đã chọn
+            })
+            .addCase(fetchProductById.rejected, (state, action) => {
+                state.status = "failed";
+                state.error = action.error.message;
             });
     }
 });

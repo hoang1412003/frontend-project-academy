@@ -13,7 +13,7 @@ export default function Product(props) {
     const [editPrice, setEditPrice] = useState(product.price)
     const [flagPrice, setFlagPrice] = useState(false)
 
-    const [editImg, setEditImg] = useState();
+    const [editImg, setEditImg] = useState(product.img);
     const [flagImg, setFlagImg] = useState()
     return (
         <tr>

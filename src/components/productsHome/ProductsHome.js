@@ -37,8 +37,6 @@ export default function ProductsHome() {
                                 <Col lg={3} md={4} sm={6} xs={6} className='mt-4'>
                                     <Product key={index} product={item} />
                                 </Col>
-                                    
-                               
                             ))}
                         </Row>
                     </div>
