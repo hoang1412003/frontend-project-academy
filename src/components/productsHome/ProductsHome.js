@@ -32,9 +32,9 @@ export default function ProductsHome() {
                 groupedProducts[category] && groupedProducts[category].length > 0 && (
                     <div key={category}>
                         <h1 className='title-h1'>{category.charAt(0).toUpperCase() + category.slice(1)}</h1>
-                        <Row>
+                        <Row className='row-product'>
                             {groupedProducts[category].map((item, index) => (
-                                <Col lg={3} md={4} sm={6} xs={6} className='mt-4'>
+                                <Col lg={3} md={4} sm={6} xs={6} className='mt-4 col-product' >
                                     <Product key={index} product={item} />
                                 </Col>
                             ))}

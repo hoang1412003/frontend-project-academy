@@ -1,12 +1,43 @@
 .container-cart{
     margin-top: 140px;
+    .row-ct{
+        
+        @media screen and (max-width: 575.98px) {
+            flex-direction: column;
+        }
+    }
     .img-div{
         img{
             width: 100%;
         }
        
     }
+    .price{
+       color: #d62e2f;
+    }
     th{
         width: 33%;
+    }
+    .quantity{
+        display: flex;
+        .btn-ct{
+            color: #000;
+        background: #fff;
+        width: 35px;
+        }
+        .number {
+            width: 35px;
+            text-align: center;
+            border: 1px solid #6c757d;
+            border-radius: 5px;
+        }
+    }
+    .delete-all{
+        margin: 169px 0;
+        background: #d62e2f;
+        border: none;
+    }
+    @media screen and (max-width: 575.98px) {
+        margin-top: 90px;
     }
 }
