@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend-project-academy/static/css/main.b55c7e07.css",
-    "main.js": "/frontend-project-academy/static/js/main.18ddabfc.js",
+    "main.css": "/frontend-project-academy/static/css/main.669b285d.css",
+    "main.js": "/frontend-project-academy/static/js/main.24b8d0ae.js",
     "static/media/abstract_luxury_soft_red_background_christmas_valentines_layout_design_studio_room_web_template_business_report_with_smooth_circle_gradient_color_a6e2703ee6.webp": "/frontend-project-academy/static/media/abstract_luxury_soft_red_background_christmas_valentines_layout_design_studio_room_web_template_business_report_with_smooth_circle_gradient_color_a6e2703ee6.1e0e74685acd7e1273d8.webp",
     "static/media/desktop_banner_1920x850_6__10e6d3d698.webp": "/frontend-project-academy/static/media/desktop_banner_1920x850_6_d926faa84871ee540432a624158384de_10e6d3d698.d126b624bb67564a1598.webp",
     "static/media/banner_trang_san_pham_38845897f6.webp": "/frontend-project-academy/static/media/banner_trang_san_pham_38845897f6.f34593d6be046ad081c2.webp",
@@ -13,17 +13,39 @@
     "static/media/1511d8dc-0044-4bdd-9a63-5da341b91858_md.webp": "/frontend-project-academy/static/media/1511d8dc-0044-4bdd-9a63-5da341b91858_md.e91ab3350dda3a066e2e.webp",
     "static/media/e6968395-039e-48f2-92b0-6291394b3928_md.webp": "/frontend-project-academy/static/media/e6968395-039e-48f2-92b0-6291394b3928_md.eed0f56fbc28faa1d7bb.webp",
     "static/media/979d9b33-2be5-4ea2-af93-fd0698a3770f_md.webp": "/frontend-project-academy/static/media/979d9b33-2be5-4ea2-af93-fd0698a3770f_md.d03f5172bdc2ea18eb16.webp",
+    "static/media/11.webp": "/frontend-project-academy/static/media/11.dc3e8e82f1316603ab06.webp",
+    "static/media/7.webp": "/frontend-project-academy/static/media/7.39c9a9e429a9fc50a8c5.webp",
+    "static/media/3.webp": "/frontend-project-academy/static/media/3.ab64ad7ee7b93184bf23.webp",
     "static/media/footer-bg.webp": "/frontend-project-academy/static/media/footer-bg.21ffb40cc54ea0530896.webp",
     "static/media/25378596-2bb5-4066-94f4-d74ee67c4450_md.webp": "/frontend-project-academy/static/media/25378596-2bb5-4066-94f4-d74ee67c4450_md.83f78d1970a0ba46ad6e.webp",
+    "static/media/4.webp": "/frontend-project-academy/static/media/4.2ec7c1addc7cfa2c846c.webp",
+    "static/media/8.webp": "/frontend-project-academy/static/media/8.7397e8ed0cf6a650c853.webp",
+    "static/media/9.webp": "/frontend-project-academy/static/media/9.c3ad809b871f52dc8a66.webp",
+    "static/media/10.webp": "/frontend-project-academy/static/media/10.7c1cfeecc3549cfa8b2b.webp",
+    "static/media/22.webp": "/frontend-project-academy/static/media/22.a4e887a50f35b1b44b89.webp",
     "static/media/logo-black-horizon.webp": "/frontend-project-academy/static/media/logo-black-horizon.dc14a8bb449fa77107e9.webp",
+    "static/media/1.webp": "/frontend-project-academy/static/media/1.9383fcd1e77181a0cbca.webp",
+    "static/media/18.webp": "/frontend-project-academy/static/media/18.4f2286d0f42e428a82f9.webp",
+    "static/media/19.webp": "/frontend-project-academy/static/media/19.e5437e23ed0ae7823a76.webp",
+    "static/media/20.webp": "/frontend-project-academy/static/media/20.246b7d47f896fff88732.webp",
+    "static/media/12.webp": "/frontend-project-academy/static/media/12.c1f293d593c93c74078a.webp",
+    "static/media/21.webp": "/frontend-project-academy/static/media/21.e4d86b9a9abd089c982d.webp",
+    "static/media/17.webp": "/frontend-project-academy/static/media/17.ecfe016e509d2341228f.webp",
+    "static/media/2.webp": "/frontend-project-academy/static/media/2.406c9679e9d1d93be919.webp",
+    "static/media/6.webp": "/frontend-project-academy/static/media/6.dc676ca13e0ad2eb2aff.webp",
+    "static/media/15.webp": "/frontend-project-academy/static/media/15.fcb7fe05abf1c1d84d12.webp",
+    "static/media/5.webp": "/frontend-project-academy/static/media/5.b6cfff3b5eb774c5e569.webp",
     "static/media/acc5772e-7977-4eff-852c-f981edc77399_md.webp": "/frontend-project-academy/static/media/acc5772e-7977-4eff-852c-f981edc77399_md.a059b0d14ec53a07b9e6.webp",
+    "static/media/14.webp": "/frontend-project-academy/static/media/14.bb82ce171db92feeb8a8.webp",
+    "static/media/13.webp": "/frontend-project-academy/static/media/13.888c625c33d7dbf09b91.webp",
+    "static/media/16.webp": "/frontend-project-academy/static/media/16.4339248a83d07c9fab54.webp",
     "index.html": "/frontend-project-academy/index.html",
     "static/media/k-icon-black.webp": "/frontend-project-academy/static/media/k-icon-black.35ccf5b97ad87c53289f.webp",
-    "main.b55c7e07.css.map": "/frontend-project-academy/static/css/main.b55c7e07.css.map",
-    "main.18ddabfc.js.map": "/frontend-project-academy/static/js/main.18ddabfc.js.map"
+    "main.669b285d.css.map": "/frontend-project-academy/static/css/main.669b285d.css.map",
+    "main.24b8d0ae.js.map": "/frontend-project-academy/static/js/main.24b8d0ae.js.map"
   },
   "entrypoints": [
-    "static/css/main.b55c7e07.css",
-    "static/js/main.18ddabfc.js"
+    "static/css/main.669b285d.css",
+    "static/js/main.24b8d0ae.js"
   ]
 }
