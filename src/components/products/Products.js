@@ -6,6 +6,7 @@ import { fetchProucts, setSearchQuery, setSortBy, setOrder } from '../../redux/p
 import banner from '../../images/prouduct-page/banner_trang_san_pham_38845897f6.webp';
 import './products.scss';
 import Pagination from 'react-js-pagination';
+import { Link } from 'react-router-dom';
 
 export default function Products() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -35,9 +36,14 @@ export default function Products() {
         <Container className='products-container'>
             {status === "loading" && <p>Loading...</p>}
             {status === "failed" && <p>Error loading products</p>}
-            <h1>Sản phẩm</h1>
+            <div className='urls' data-aos="fade-right">
+                <Link to={'/'}>Trang chủ</Link>
+                <Link to={'/products'}><span>/</span>Sản phẩm</Link>
+                <h1>Sản phẩm</h1>
+            </div>
+            
             <Row>
-                <Col lg={3} md={9}>
+                <Col lg={3} md={12} sm={12} xs={12} data-aos="fade-down-right">
                     <div>
                         <div className='search-products'>
                             <Input className='ip-ct' placeholder='Search'
@@ -54,7 +60,7 @@ export default function Products() {
                         </div>
                     </div>
                 </Col>
-                <Col lg={9} md={9} className='col-ct'>
+                <Col lg={9} md={12} sm={12} xs={12} className='col-ct' data-aos="fade-down-left">
                     <div>
                         <div className='img-ct'>
                             <img src={banner} />
@@ -67,7 +73,7 @@ export default function Products() {
                             ))}
                         </Row>
                     </div>
-                    <Pagination
+                    <Pagination data-aos="zoom-in"
                         activePage={currentPage}
                         totalItemsCount={totalPage}
                         pageRangeDisplayed={3}

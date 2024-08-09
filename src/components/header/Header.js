@@ -5,6 +5,7 @@ import "./header.scss";
 import { Col, Container, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import MenuTH from '../menu/MenuTH';
+import { useSelector } from 'react-redux';
 
 
 function Header() {
@@ -12,6 +13,7 @@ function Header() {
   const [activeLink, setActiveLink] = useState('/'); 
   const [showMenuTH, setShowMenuTH] = useState(false);
   const [showMenu, setShowMenu] = useState(false)
+  const {items} = useSelector(state=>state.cart)
   const handleResize = () => {
     if (window.innerWidth < 576) {
       
@@ -37,7 +39,7 @@ function Header() {
   };
 
   return (
-    <div className='contain-header'>
+    <div className='contain-header' data-aos="fade-down">
       <Row>
         <Col lg={12} md={12} sm={12} xs={12} className='col-hd1'>
           <Link to={`/`} className='logo-img'>
@@ -45,7 +47,7 @@ function Header() {
           </Link>
           <div>
             <button className='icon-ct'><i className="fa-solid fa-magnifying-glass"></i></button>
-            <button className='icon-ct'><i className="fa-solid fa-cart-shopping"></i></button>
+            <Link to={"/cart"} className='icon-ct'><i className="fa-solid fa-cart-shopping icon-cart"><span>{items.length}</span></i></Link>
             {
               window.innerWidth < 576 && <button onClick={handleMenuButtonClick} className='icon-ct'><i className="fa-solid fa-bars"></i></button>
             }

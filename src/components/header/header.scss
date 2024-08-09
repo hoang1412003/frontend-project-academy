@@ -6,11 +6,12 @@
     background: #fff;
     padding: 0 10%;
     border: 1px solid #EEEDEB;
+
     .col-hd1 {
         display: flex;
         justify-content: space-between;
         padding: 10px 0;
-        
+
         .logo-img {
             cursor: pointer;
 
@@ -30,6 +31,21 @@
             background: #fff;
             padding: 10px 20px;
             border-radius: 5px;
+            color: #000;
+
+            .icon-cart {
+                position: relative;
+
+                span {
+                    position: absolute;
+                    top: 4%;
+                    left: 34%;
+                    color: #fff;
+                    font-size: 11px;
+                    padding: 1px;
+                    background: #000;
+                }
+            }
 
             &:hover {
                 background-color: #EEEDEB;
@@ -75,7 +91,7 @@
             position: absolute;
 
             width: 100%;
-            
+
             z-index: 3;
             background: #fff;
             left: 0;

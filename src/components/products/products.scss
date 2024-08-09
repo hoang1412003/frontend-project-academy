@@ -13,17 +13,32 @@
                 border-color: #758694;    
             }
         }
-        
     }
-
-    h1 {
+    .urls{
         margin-top: 140px;
         margin-bottom: 34px;
+        a {
+            span {
+                margin: 0 10px;
+            }
+            text-decoration: none;
+            color: #000;
+        }
+        h1 {
+        
+            margin-bottom: 34px;
+            margin-top: 15px;
+            @media screen and (max-width: 575.98px) {
+               
+                margin-bottom: 20px;
+            }
+        }
         @media screen and (max-width: 575.98px) {
             margin-top: 90px;
             margin-bottom: 20px;
         }
     }
+    
 
     .img-ct {
         img {

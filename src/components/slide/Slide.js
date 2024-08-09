@@ -37,19 +37,19 @@ const items = [
         src: img4,
         altText: '',
         caption: '',
-        key: 3,
+        key: 4,
     },
     {
         src: img5,
         altText: '',
         caption: '',
-        key: 3,
+        key: 5,
     },
     {
         src: img6,
         altText: '',
         caption: '',
-        key: 3,
+        key: 6,
     },
 ];
 
@@ -96,6 +96,7 @@ function Slide(args) {
             next={next}
             previous={previous}
             {...args}
+            data-aos="fade-right"
         >
             <CarouselIndicators
                 items={items}

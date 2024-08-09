@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Trạng thái khởi tạo cho giỏ hàng, lấy từ localStorage nếu có
 const initialState = {
     items: JSON.parse(localStorage.getItem('cartItems')) || [],
 };
@@ -10,8 +11,6 @@ const cartSlice = createSlice({
     reducers: {
         addItemToCart: (state, action) => {
             const { product, size, quantity } = action.payload;
-
-            // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
             const existingItemIndex = state.items.findIndex(item => item.id === product.id && item.size === size);
 
             if (existingItemIndex > -1) {
@@ -27,15 +26,37 @@ const cartSlice = createSlice({
         },
         removeItemFromCart: (state, action) => {
             const { id, size } = action.payload;
+            // Xóa sản phẩm khỏi giỏ hàng
             state.items = state.items.filter(item => !(item.id === id && item.size === size));
             localStorage.setItem('cartItems', JSON.stringify(state.items));
         },
         clearCart: (state) => {
+            // Xóa tất cả sản phẩm trong giỏ hàng
             state.items = [];
             localStorage.removeItem('cartItems'); // Xóa giỏ hàng khỏi localStorage
+        },
+        incrementItemQuantity: (state, action) => {
+            const { id, size } = action.payload;
+            const existingItemIndex = state.items.findIndex(item => item.id === id && item.size === size);
+
+            if (existingItemIndex > -1) {
+                // Tăng số lượng sản phẩm trong giỏ hàng
+                state.items[existingItemIndex].quantity += 1;
+                localStorage.setItem('cartItems', JSON.stringify(state.items));
+            }
+        },
+        decrementItemQuantity: (state, action) => {
+            const { id, size } = action.payload;
+            const existingItemIndex = state.items.findIndex(item => item.id === id && item.size === size);
+
+            if (existingItemIndex > -1 && state.items[existingItemIndex].quantity > 1) {
+                // Giảm số lượng sản phẩm trong giỏ hàng nếu số lượng lớn hơn 1
+                state.items[existingItemIndex].quantity -= 1;
+                localStorage.setItem('cartItems', JSON.stringify(state.items));
+            }
         },
     },
 });
 
-export const { addItemToCart, removeItemFromCart, clearCart } = cartSlice.actions;
+export const { addItemToCart, removeItemFromCart, clearCart, incrementItemQuantity, decrementItemQuantity } = cartSlice.actions;
 export default cartSlice.reducer;

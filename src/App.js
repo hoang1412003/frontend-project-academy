@@ -6,7 +6,18 @@ import AdminHome from './pages/admin/AdminHome';
 import Products from './pages/productsPage/ProductsPage';
 import ProductDetail from './pages/productDetailPage/ProductDetailPage';
 import CartPage from './pages/cart/CartPage';
+import 'aos/dist/aos.css'; // Nhập CSS cho AOS
+import AOS from 'aos'; // Nhập AOS
+import { useEffect } from 'react';
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Thay đổi thời gian hiệu ứng
+      offset: 100, // Khoảng cách để kích hoạt hiệu ứng
+      easing: 'ease-in-out', // Phương thức easing
+      delay: 200, // Thay đổi độ trễ hiệu ứng
+    });
+  }, []);
   return (
     <div className="App">
       <HashRouter>

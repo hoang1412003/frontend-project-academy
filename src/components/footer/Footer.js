@@ -4,9 +4,9 @@ import { Col, Row } from 'reactstrap'
 import logo from '../../images/footer/logo-white-horizon.png'
 export default function Footer() {
     return (
-        <div className='footer'>
+        <div className='footer' data-aos="fade-up">
             
-                <Row>
+                <Row className='row-footer'>
                     <Col lg={3} md={6} sm={12} xs={12}>
                         <div className='information'>
                             <div className='logo'>
@@ -25,7 +25,7 @@ export default function Footer() {
                     </Col>
                     <Col lg={3} md={6} sm={12} xs={12}>
                         <div className='information'>
-                            <p>HỖ TRỢ KHÁCH HÀNG</p>
+                            <h6>HỖ TRỢ KHÁCH HÀNG</h6>
                             <p>Chăm sóc khách hàng / báo lỗi: support@kicksplanet.vn</p>
                             <p>Hướng dẫn đặt hàng</p>
                             <p>Phương thức vận chuyển</p>
@@ -36,7 +36,7 @@ export default function Footer() {
                     </Col>
                     <Col lg={3} md={6} sm={12} xs={12}>
                         <div className='information'>
-                            <p>VỀ KICKSPLANET</p>
+                            <h6>VỀ KICKSPLANET</h6>
                             <p>Giới thiệu</p>
                             <p>Kicksplanet Blog</p>
                             <p>Điều khoản sử dụng</p>
@@ -46,7 +46,7 @@ export default function Footer() {
                     </Col>
                     <Col lg={3} md={6} sm={12} xs={12}>
                         <div className='information'>
-                            <p>BÁN HÀNG TRÊN KICKSPLANET</p>
+                            <h6>BÁN HÀNG TRÊN KICKSPLANET</h6>
                             <p>Quy chế hoạt động sàn TMĐT Kicksplanet</p>
                             <p>Hướng dẫn bán hàng</p>
                             <p>Quy định đăng bán sản phẩm</p>
@@ -56,7 +56,7 @@ export default function Footer() {
                         </div>
                     </Col>
                 </Row>
-            
+                <p style={{marginTop:"20px", color:"#fff"}}>Copyright © 2024 Thân Văn Hoàng.</p>
         </div>
     )
 }
