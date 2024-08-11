@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/frontend-project-academy/static/css/main.669b285d.css",
-    "main.js": "/frontend-project-academy/static/js/main.24b8d0ae.js",
+    "main.js": "/frontend-project-academy/static/js/main.6adab4f3.js",
     "static/media/abstract_luxury_soft_red_background_christmas_valentines_layout_design_studio_room_web_template_business_report_with_smooth_circle_gradient_color_a6e2703ee6.webp": "/frontend-project-academy/static/media/abstract_luxury_soft_red_background_christmas_valentines_layout_design_studio_room_web_template_business_report_with_smooth_circle_gradient_color_a6e2703ee6.1e0e74685acd7e1273d8.webp",
     "static/media/desktop_banner_1920x850_6__10e6d3d698.webp": "/frontend-project-academy/static/media/desktop_banner_1920x850_6_d926faa84871ee540432a624158384de_10e6d3d698.d126b624bb67564a1598.webp",
     "static/media/banner_trang_san_pham_38845897f6.webp": "/frontend-project-academy/static/media/banner_trang_san_pham_38845897f6.f34593d6be046ad081c2.webp",
@@ -42,10 +42,10 @@
     "index.html": "/frontend-project-academy/index.html",
     "static/media/k-icon-black.webp": "/frontend-project-academy/static/media/k-icon-black.35ccf5b97ad87c53289f.webp",
     "main.669b285d.css.map": "/frontend-project-academy/static/css/main.669b285d.css.map",
-    "main.24b8d0ae.js.map": "/frontend-project-academy/static/js/main.24b8d0ae.js.map"
+    "main.6adab4f3.js.map": "/frontend-project-academy/static/js/main.6adab4f3.js.map"
   },
   "entrypoints": [
     "static/css/main.669b285d.css",
-    "static/js/main.24b8d0ae.js"
+    "static/js/main.6adab4f3.js"
   ]
 }
