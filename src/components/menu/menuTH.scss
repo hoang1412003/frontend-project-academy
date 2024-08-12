@@ -23,12 +23,12 @@
         div {
             position: relative;
             display: flex;
-            /* Đặt flexbox cho div */
+            
             align-items: center;
-            /* Căn giữa theo chiều dọc */
+            
             justify-content: center;
 
-            /* Căn giữa theo chiều ngang */
+            
             &::before {
                 content: '';
                 position: absolute;

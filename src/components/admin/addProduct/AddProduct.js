@@ -36,6 +36,10 @@ export default function AddProduct(props) {
 
             <Button className='btn-ct' onClick={()=>{
                 handle_add({name: name, category: category, price: price, img: img})
+                setName('')
+                setCategory('')
+                setPrice('')
+                setImg('')
             }}>Add Product</Button>
         </div>
     )

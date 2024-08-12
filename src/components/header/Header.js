@@ -35,7 +35,7 @@ function Header() {
   }, []);
 
   const handleLinkClick = (path) => {
-    setActiveLink(path); // Cập nhật đường dẫn liên kết đang được chọn
+    setActiveLink(path); 
   };
 
   return (
@@ -80,9 +80,7 @@ function Header() {
 
               >
                 Top thịnh hành
-                {/* <p className={`link-hd2 ${activeLink === '/trending' ? 'active' : ''}`} onClick={() => handleLinkClick('/trending')}>
-              
-            </p> */}
+                
                 {showMenuTH && <MenuTH />}
               </li>
               <li>

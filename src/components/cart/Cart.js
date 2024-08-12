@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Col, Container, Row, Table, Button, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItemFromCart, clearCart, incrementItemQuantity, decrementItemQuantity, toggleItemChecked } from '../../redux/cartSlice';
-import OrderForm from '../orderForm/OrderForm'; // Import form order component
-import emailjs from 'emailjs-com'; // Import EmailJS
+import OrderForm from '../orderForm/OrderForm'; 
+import emailjs from 'emailjs-com'; 
 import Swal from 'sweetalert2';
 import './cart.scss';
 
@@ -11,7 +11,7 @@ export default function Cart() {
     const dispatch = useDispatch();
     const { items } = useSelector(state => state.cart);
 
-    // State to control the modal
+    
     const [modal, setModal] = useState(false);
     const [formData, setFormData] = useState({
         fullName: '',
@@ -22,12 +22,12 @@ export default function Cart() {
         address: ''
     });
 
-    // Handle checkbox change
+    
     const handleCheckboxChange = (id, size) => {
         dispatch(toggleItemChecked({ id, size }));
     };
 
-    // Handle check/uncheck all items
+    
     const handleCheckAll = (e) => {
         const checked = e.target.checked;
         items.forEach(item => {
@@ -37,10 +37,10 @@ export default function Cart() {
         });
     };
 
-    // Check if all items are checked
+    
     const allChecked = items.length > 0 && items.every(item => item.checked);
 
-    // Calculate total price
+    
     const totalPrice = items.reduce((total, item) => {
         if (item.checked) {
             return total + item.price * item.quantity;
@@ -48,32 +48,32 @@ export default function Cart() {
         return total;
     }, 0);
 
-    // Handle item removal
+    
     const handleRemove = (id, size) => {
         dispatch(removeItemFromCart({ id, size }));
     };
 
-    // Handle clear cart
+    
     const handleClearCart = () => {
         dispatch(clearCart());
     };
 
-    // Handle increment quantity
+    
     const handleIncrement = (id, size) => {
         dispatch(incrementItemQuantity({ id, size }));
     };
 
-    // Handle decrement quantity
+    
     const handleDecrement = (id, size) => {
         dispatch(decrementItemQuantity({ id, size }));
     };
 
-    // Toggle modal visibility
+    
     const toggleModal = () => {
         setModal(!modal);
     };
 
-    // Handle form data change
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -82,14 +82,14 @@ export default function Cart() {
         }));
     };
 
-    // Handle form submission
+    
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const emailData = {
             ...formData,
-            to_email: formData.email, // Set to_email for sending email
-            items: items.filter(item => item.checked) // Include checked items in email data
+            to_email: formData.email, 
+            items: items.filter(item => item.checked) 
         };
 
         emailjs.send('service_eeqz6n8', 'template_5phw1aa', emailData, '6eiqz7Se7X7AHug_Y')
@@ -99,8 +99,8 @@ export default function Cart() {
                     text: "Đơn hàng đã được đặt!",
                     icon: "success"
                 });
-                toggleModal(); // Close modal after submission
-                dispatch(clearCart()); // Clear cart after successful submission
+                toggleModal(); 
+                dispatch(clearCart()); 
             }, (error) => {
                 Swal.fire({
                     title: "Lỗi!",
@@ -116,7 +116,7 @@ export default function Cart() {
                 <thead>
                     <tr>
                         <th>
-                            {/* Checkbox to select all items */}
+                            
                             <Input
                                 type="checkbox"
                                 checked={allChecked}
@@ -133,7 +133,7 @@ export default function Cart() {
                     {items.map((item, index) => (
                         <tr key={index}>
                             <td>
-                                {/* Checkbox to select individual item */}
+                                
                                 <Input
                                     type="checkbox"
                                     checked={item.checked || false}
@@ -170,13 +170,13 @@ export default function Cart() {
                     ))}
                 </tbody>
             </Table>
-            {/* Total price */}
+            
             <h4>Tổng tiền: {totalPrice} ₫</h4>
-            {/* Buttons */}
+            
             <Button className='delete-all' color="primary" onClick={handleClearCart}>Xóa tất cả</Button>
             <Button className='checkout' style={{marginLeft: '10px'}} color="success" onClick={toggleModal}>Thanh toán</Button>
 
-            {/* Modal for order form */}
+            
             <Modal isOpen={modal} toggle={toggleModal}>
                 <ModalHeader toggle={toggleModal}>Thông tin đặt hàng</ModalHeader>
                 <ModalBody>

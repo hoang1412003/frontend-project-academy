@@ -176,7 +176,7 @@ export default function ProductDetail() {
                 </Col>
             </Row>
 
-            {/* Modal để nhập thông tin mua hàng */}
+            
             <Modal isOpen={modal} toggle={toggleModal}>
                 <ModalHeader toggle={toggleModal}>Thông tin đặt hàng</ModalHeader>
                 <ModalBody>

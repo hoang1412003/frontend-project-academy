@@ -15,13 +15,13 @@ export default function Products() {
 
     useEffect(() => {
         dispatch(fetchProucts({ page: currentPage, limit: 12, searchQuery, sortBy, order }));
-    }, [currentPage, searchQuery, sortBy, order, dispatch]); // Thay đổi: Thêm sortBy và order vào dependency array
+    }, [currentPage, searchQuery, sortBy, order, dispatch]); 
 
     const handleSearchChange = (e) => {
         dispatch(setSearchQuery(e.target.value));
     };
 
-    // Thay đổi: Thêm hàm để xử lý thay đổi của menu chọn sắp xếp
+    
     const handleSortChange = (e) => {
         const [sortField, sortOrder] = e.target.value.split('|');
         dispatch(setSortBy(sortField));
@@ -54,8 +54,8 @@ export default function Products() {
                         <div className='select-div'>
                             <select className='sort-select sort-select-ct' onChange={handleSortChange} value={`${sortBy}|${order}`}>
                                 <option value='default|asc'>Mặc định</option>
-                                <option value='price|asc'>Giá: Tăng dần</option>  {/* Thay đổi: Thêm tùy chọn sắp xếp theo giá tăng dần */}
-                                <option value='price|desc'>Giá: Giảm dần</option> {/* Thay đổi: Thêm tùy chọn sắp xếp theo giá giảm dần */}
+                                <option value='price|asc'>Giá: Tăng dần</option>  
+                                <option value='price|desc'>Giá: Giảm dần</option> 
                             </select>
                         </div>
                     </div>

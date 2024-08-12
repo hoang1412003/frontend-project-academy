@@ -14,7 +14,7 @@ export default function ProductsHome() {
         dispatch(fetchProucts({ page: currentPage }));
     }, [currentPage, dispatch]);
 
-    // Danh sách danh mục
+    
     const categories = [
         'jordan1',
         'airforce1',

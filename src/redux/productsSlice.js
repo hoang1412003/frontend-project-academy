@@ -3,7 +3,7 @@ import axios from "axios";
 
 const initialState = {
     products: [],
-    groupedProducts: {}, // Thêm thuộc tính mới để lưu trữ sản phẩm đã nhóm
+    groupedProducts: {}, 
     currentPage: 1,
     status: "start",
     error: "",
@@ -16,19 +16,12 @@ const initialState = {
 
 const url = "https://66a8534f53c13f22a3d25bb3.mockapi.io/product";
 
-// export const fetchProucts = createAsyncThunk('products/fetchProucts', async ({ page, limit, searchQuery }) => {
-//     const queryString = new URLSearchParams({
-//         ...(searchQuery && { search: searchQuery })
-//     }).toString();
 
-//     const res = await axios.get(`${url}?page=${page}${limit ? `&limit=${limit}` : ''}&${queryString}`);
-//     return res.data;
-// });
 export const fetchProucts = createAsyncThunk('products/fetchProucts', async ({ page, limit, searchQuery, sortBy, order }) => {
     const queryString = new URLSearchParams({
         ...(searchQuery && { search: searchQuery }),
-        ...(sortBy && { sortBy: sortBy }), // Thay đổi: Thêm sortBy vào query string
-        ...(order && { order: order })     // Thay đổi: Thêm order vào query string
+        ...(sortBy && { sortBy: sortBy }), 
+        ...(order && { order: order })     
     }).toString();
 
     const res = await axios.get(`${url}?page=${page}${limit ? `&limit=${limit}` : ''}&${queryString}`);
@@ -63,10 +56,10 @@ const productsSlice = createSlice({
             state.searchQuery = action.payload;
         },
         setSortBy: (state, action) => {
-            state.sortBy = action.payload; // Thay đổi: Thêm action để cập nhật sortBy
+            state.sortBy = action.payload; 
         },
         setOrder: (state, action) => {
-            state.order = action.payload; // Thay đổi: Thêm action để cập nhật order
+            state.order = action.payload; 
         }
     },
     extraReducers: (builder) => {
@@ -78,7 +71,7 @@ const productsSlice = createSlice({
                 state.status = "succeeded";
                 state.products = action.payload;
 
-                // Nhóm sản phẩm theo danh mục
+                
                 const groupedProducts = state.products.reduce((acc, product) => {
                     const category = product.category.trim();
                     if (!acc[category]) {
@@ -88,11 +81,11 @@ const productsSlice = createSlice({
                     return acc;
                 }, {});
 
-                // Giới hạn số lượng sản phẩm hiển thị trong mỗi nhóm
+                
                 state.groupedProducts = Object.fromEntries(
                     Object.entries(groupedProducts).map(([category, items]) => [
                         category,
-                        items.slice(0, 4) // Giới hạn mỗi nhóm chỉ có 4 sản phẩm
+                        items.slice(0, 4) 
                     ])
                 );
             })
@@ -103,7 +96,7 @@ const productsSlice = createSlice({
             .addCase(deleteProduct.fulfilled, (state, action) => {
                 state.products = state.products.filter(item => item.id !== action.payload);
                 
-                // Cập nhật groupedProducts khi xóa sản phẩm
+                
                 const groupedProducts = state.products.reduce((acc, product) => {
                     const category = product.category.trim();
                     if (!acc[category]) {
@@ -116,14 +109,14 @@ const productsSlice = createSlice({
                 state.groupedProducts = Object.fromEntries(
                     Object.entries(groupedProducts).map(([category, items]) => [
                         category,
-                        items.slice(0, 4) // Giới hạn mỗi nhóm chỉ có 4 sản phẩm
+                        items.slice(0, 4) 
                     ])
                 );
             })
             .addCase(addNewProduct.fulfilled, (state, action) => {
                 state.products = [...state.products, action.payload];
                 
-                // Cập nhật groupedProducts khi thêm sản phẩm
+                
                 const groupedProducts = state.products.reduce((acc, product) => {
                     const category = product.category.trim();
                     if (!acc[category]) {
@@ -136,7 +129,7 @@ const productsSlice = createSlice({
                 state.groupedProducts = Object.fromEntries(
                     Object.entries(groupedProducts).map(([category, items]) => [
                         category,
-                        items.slice(0, 4) // Giới hạn mỗi nhóm chỉ có 4 sản phẩm
+                        items.slice(0, 4) 
                     ])
                 );
             })
@@ -145,7 +138,7 @@ const productsSlice = createSlice({
                     item.id === action.payload.id ? action.payload : item
                 );
                 
-                // Cập nhật groupedProducts khi cập nhật sản phẩm
+                
                 const groupedProducts = state.products.reduce((acc, product) => {
                     const category = product.category.trim();
                     if (!acc[category]) {
@@ -158,7 +151,7 @@ const productsSlice = createSlice({
                 state.groupedProducts = Object.fromEntries(
                     Object.entries(groupedProducts).map(([category, items]) => [
                         category,
-                        items.slice(0, 4) // Giới hạn mỗi nhóm chỉ có 4 sản phẩm
+                        items.slice(0, 4) 
                     ])
                 );
             })
@@ -167,7 +160,7 @@ const productsSlice = createSlice({
             })
             .addCase(fetchProductById.fulfilled, (state, action) => {
                 state.status = "succeeded";
-                state.selectedProduct = action.payload; // Lưu thông tin sản phẩm đã chọn
+                state.selectedProduct = action.payload; 
             })
             .addCase(fetchProductById.rejected, (state, action) => {
                 state.status = "failed";
